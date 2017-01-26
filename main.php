@@ -4,13 +4,17 @@
 <title>STRONA z elementami HTML5</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="styles/styl.css" />
-<script src ="functions/functions.js"></script>
+<script src ="functions/something.js"></script>
 </head>
-<body onload="LoadImage()">
+<body onload="LoadImage();">
 <section id="kontener">
-<header id="naglowek"><h5>STRONA INTERNETOWA</h5>
+<header id="naglowek"><div id="head1"><h5>Projekt</h5>
 Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator.nu</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://validator.w3.org">http://validator.w3.org</a>
+</div>
+<div id="head2"></div>
+<div style="clear:both;">
+
 </header>
 <nav id="menu">
 <a href="index.php?strona=start">Strona główna</a><br /><br />
