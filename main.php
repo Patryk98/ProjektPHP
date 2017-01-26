@@ -3,7 +3,7 @@
 <head>
 <title>STRONA z elementami HTML5</title>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="styl.css" />
+<link rel="stylesheet" href="styles/styl.css" />
 <script src ="plik.js"></script>
 </head>
 <body>
