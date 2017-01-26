@@ -4,9 +4,9 @@
 <title>STRONA z elementami HTML5</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="styles/styl.css" />
-<script src ="plik.js"></script>
+<script src ="functions/functions.js"></script>
 </head>
-<body>
+<body onload="LoadImage()">
 <section id="kontener">
 <header id="naglowek"><h5>STRONA INTERNETOWA</h5>
 Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator.nu</a>&nbsp;&nbsp;&nbsp;&nbsp;
