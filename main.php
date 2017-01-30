@@ -10,8 +10,7 @@
 <body onload="$(document).ready(function(){LoadImage()});">
 <section id="kontener">
 <header id="naglowek"><div id="head1"><h5>Projekt</h5>
-Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator.nu
-</a>&nbsp;&nbsp;&nbsp;&nbsp;
+Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator.nu</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://validator.w3.org">http://validator.w3.org</a>
 </div>
 <div id="head2"></div>
@@ -19,16 +18,17 @@ Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator
 
 </header>
 <nav id="menu">
-<a href="index.php?strona=start">Strona główna</a><br /><br />
-<a href="index.php?strona=gra">Gry</a>
+<a href="main.php">Strona główna</a><br /><br />
+<a href="main.php?strona=gra">Gry</a> <br /><br />
+<a href="main.php?strona=random">Losowanie</a>
 </nav>
 <section id="main">
 <?php
 if(isset($_REQUEST["strona"]))$strona = $_REQUEST["strona"];
 else $strona = "start";
-if(file_exists("skrypty/$strona.php"))
+if(file_exists("Scrits/$strona.php"))
 {
-include("skrypty/$strona.php");
+include("Scripts/$strona.php");
 }
 else
 {
