@@ -1,4 +1,8 @@
 var  nrPhoto = 1;
+function HidePhoto()
+{
+  $("#head2").fadeOut(1000);
+}
 function LoadImage()
 {
   if(nrPhoto>=4)
@@ -9,9 +13,12 @@ function LoadImage()
   {
 
   }
-	var tagImg = "<img id='slajd' src='Images/image"+nrPhoto+".png' />";
+	var tagImg = "<a href=\"#\" id=\"odnosnik/">"<img id='slajd' src='Images/image"+nrPhoto+".png' />";
 	document.getElementById("head2").innerHTML = tagImg;
+  $("#head2").fadeIn(1000);
   nrPhoto++;
-  setTimeout("LoadImage()",3000);
+  setTimeout("HidePhoto()".5000);
+  setTimeout("LoadImage()",6000);
+
 
 }
