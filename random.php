@@ -12,11 +12,11 @@ if ($los == "no") {
   echo "Wylosuj ucznia do odpowiedzi";
   echo <<<KONIEC
   <form action="main.php?strona=random" method="POST">
-  <select name="klasa">
+  <select name="class">
     <option value="">2Ti</option>
     <option value="">3Ti</option>
   </select>
-  <select name="grupa">
+  <select name="group">
     <option value="">Grupa_1</option>
     <option value="">Grupa_2</option>
   </select>
@@ -34,33 +34,33 @@ else if ($los="yes") {
   echo "Wylosuj ucznia do odpowiedzi";
   echo <<<KONIEC
   <form action="main.php?strona=random" method="POST">
-  <select name="class">
+  <select name="klasa">
     <option>2Ti</option>
     <option>3Ti</option>
   </select>
-  <select name="group">
+  <select name="grupa">
     <option>Grupa_1</option>
     <option>Grupa_2</option>
   </select>
-  <input type="text" name="numerek" placeholder="Wpisz szczęśliwy numerek" value="" />
+  <input type="text" name="numerek" placeholder="Wpisz szczęśliwy numerek" />
   <br />
-  <input type="radio" name="Type" checked="checked" value="rand" />random
-  <input type="radio" name="Type" value="mt_rand" />mt_random
+  <input type="radio" name="TypLosowania" checked="checked" value="rand" />random
+  <input type="radio" name="TypLosowania" value="mt_rand" />mt_random
   <input type="hidden" name="los" value="yes" />
   <br /><input type="submit" value="Send" />
   </form>
 KONIEC;
 $numerek = $_REQUEST["numerek"];
-$Type = $_REQUEST["Type"];
-$class = $_REQUEST["class"];
-$group = $_REQUEST["group"];
-$Student = RandomStudent($class, $group, $numerek, $Type);
+$TypLosowania = $_REQUEST["TypLosowania"];
+$klasa = $_REQUEST["klasa"];
+$grupa = $_REQUEST["grupa"];
+$Student = RandomStudent($klasa, $grupa, $numerek, $TypLosowania);
 echo ($Student);
 }
 else {
   echo "ta strona nie znaleziona";
 }
-function RandomStudent($class, $group, $numerek, $Type)
+function RandomStudent($class, $group, $number, $Type)
 {
   if ($Type == "rand")
   {
@@ -68,26 +68,31 @@ function RandomStudent($class, $group, $numerek, $Type)
       {
         if ($group == "Grupa_1")
         {
-          $Student = rand(1,15);
+          $x = rand(1,15);
         }
         else if ($group == "Grupa_2")
         {
-          $Student = rand(16,30);
+          $x = rand(16,30);
+        }
+        else {
+          $x = "nica";
         }
       }
       else if($class == "3ti")
       {
         if ($group == "Grupa_1")
         {
-          $Student = rand(1,15);
+          $x = rand(1,15);
         }
         else if ($group == "Grupa_2")
         {
-        $Student = rand(16,30);
+        $x = rand(16,30);
+        }
+        else {
+          $x = "nicb";
         }
       }
-    $Student = 20;
-    return $Student;
+    return $x;
   }
   else if ($Type == "mt_rand")
   {
