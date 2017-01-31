@@ -62,64 +62,42 @@ else {
 }
 function RandomStudent($class, $group, $number, $Type)
 {
-  if ($Type == "rand")
-  {
-      if ($class == "2ti")
-      {
-        if ($group == "Grupa_1")
-        {
-          $x = rand(1,15);
-        }
-        else if ($group == "Grupa_2")
-        {
-          $x = rand(16,30);
-        }
-        else {
-          $x = "nica";
-        }
-      }
-      else if($class == "3ti")
-      {
-        if ($group == "Grupa_1")
-        {
-          $x = rand(1,15);
-        }
-        else if ($group == "Grupa_2")
-        {
-        $x = rand(16,30);
-        }
-        else {
-          $x = "nicb";
-        }
-      }
-    return $x;
-  }
-  else if ($Type == "mt_rand")
-  {
-    if ($class == "2ti")
-    {
-      if ($group == "Grupa_1")
-      {
+  if($class == "2Ti"  && $group == "Grupa_1")
+  	{
 
-      }
-      else if ($group == "Grupa_2")
+  		$g1_2ti = array(3,4,6,7,11,15,16,18,19,20,22,24,25,28,29,32,33);
+  		do {
+  		  $i = rand(0,count($g1_2ti));
+        $x = $g1_2ti;
+  		} while ($x==$number);
+
+  	}
+  	if($class == "2Ti"  && $group == "Grupa_2")
+  	{
+  		$g2_2ti = array(0,1,5,8,9,10,12,13,14,17,21,23,26,27,30,34,35);
+      do {
+  		  $i = rand(0,count($g2_2ti));
+        $x = $g1_2ti;
+  		} while ($x==$number);
+  	}
+
+    if($class == "3Ti"  && $group == "Grupa_1")
+  	{
+      do
       {
+  		$x = rand(1,15);
+  		}
+      while($x==$number);
 
-      }
-
+  	}
+  	if($class == "3Ti"  && $group == "Grupa_2")
+  	{
+      do
+      {
+  		$x = rand(16,29);
     }
-    else if($class == "3ti")
-    {
-      if ($group == "Grupa_1")
-      {
-
-      }
-      else if ($group == "Grupa_2")
-      {
-
-      }
-    }
-  }
-
+    while($x==$number);
+  	}
+  	return $x;
 }
 ?>
