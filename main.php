@@ -18,7 +18,7 @@ Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator
 
 </header>
 <nav id="menu">
-<a href="main.php">Strona główna</a><br /><br />
+<a href="main.php?strona=start">Strona główna</a><br /><br />
 <a href="main.php?strona=gra">Gry</a> <br /><br />
 <a href="main.php?strona=random">Losowanie</a>
 </nav>
@@ -26,9 +26,9 @@ Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator
 <?php
 if(isset($_REQUEST["strona"]))$strona = $_REQUEST["strona"];
 else $strona = "start";
-if(file_exists("Scrits/$strona.php"))
+if(file_exists("$strona.php"))
 {
-include("Scripts/$strona.php");
+include("$strona.php");
 }
 else
 {
