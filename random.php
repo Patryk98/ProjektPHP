@@ -68,26 +68,26 @@ function RandomStudent($class, $group, $numerek, $Type)
       {
         if ($group == "Grupa_1")
         {
-          echo(rand(1,15));
+          $Student = rand(1,15);
         }
         else if ($group == "Grupa_2")
         {
-          echo(rand(15,30));
+          $Student = rand(16,30);
         }
-
       }
       else if($class == "3ti")
       {
         if ($group == "Grupa_1")
         {
-          echo(rand(1,15));
+          $Student = rand(1,15);
         }
         else if ($group == "Grupa_2")
         {
-          echo(rand(15,30));
+        $Student = rand(16,30);
         }
       }
-
+    $Student = 20;
+    return $Student;
   }
   else if ($Type == "mt_rand")
   {
