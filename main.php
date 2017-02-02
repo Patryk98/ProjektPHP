@@ -24,6 +24,8 @@ Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator
 </nav>
 <section id="main">
 <?php
+srand(time());
+mt_srand(time());
 if(isset($_REQUEST["strona"]))$strona = $_REQUEST["strona"];
 else $strona = "start";
 if(file_exists("$strona.php"))

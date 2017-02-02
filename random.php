@@ -8,7 +8,7 @@ if (isset($_REQUEST["los"])) {
 
 if ($los == "no") {
   # code...
-
+  $numerek = $_REQUEST["numerek"];
   echo "Wylosuj ucznia do odpowiedzi";
   echo <<<KONIEC
   <form action="main.php?strona=random" method="POST">
@@ -20,7 +20,7 @@ if ($los == "no") {
     <option value="">Grupa_1</option>
     <option value="">Grupa_2</option>
   </select>
-  <input type="text" name="numerek" placeholder="Wpisz szczęśliwy numerek" value="" />
+  <input type="text" name="numerek" placeholder="Wpisz szczęśliwy numerek" value="$numerek" />
   <br />
   <input type="radio" name="TypLosowania" value="rand" />random
   <input type="radio" name="TypLosowania" value="mt_rand" />mt_random
@@ -31,6 +31,7 @@ KONIEC;
 }
 else if ($los="yes") {
   # code...
+  $numerek = $_REQUEST["numerek"];
   echo "Wylosuj ucznia do odpowiedzi";
   echo <<<KONIEC
   <form action="main.php?strona=random" method="POST">
@@ -42,7 +43,7 @@ else if ($los="yes") {
     <option>Grupa_1</option>
     <option>Grupa_2</option>
   </select>
-  <input type="text" name="numerek" placeholder="Wpisz szczęśliwy numerek" />
+  <input type="text" name="numerek" placeholder="Wpisz szczęśliwy numerek" value="$numerek"/>
   <br />
   <input type="radio" name="TypLosowania" checked="checked" value="rand" />random
   <input type="radio" name="TypLosowania" value="mt_rand" />mt_random
@@ -67,8 +68,14 @@ function RandomStudent($class, $group, $number, $Type)
 
   		$g1_2ti = array(3,4,6,7,11,15,16,18,19,20,22,24,25,28,29,32,33);
   		do {
-  		  $i = rand(0,count($g1_2ti));
-        $x = $g1_2ti;
+        if ($Type == "rand")
+        {
+  		  $i = rand(0,count($g1_2ti)-1);
+        }
+        else {
+          $i = mt_rand(0,count($g1_2ti)-1);
+        }
+        $x = $g1_2ti[$i];
   		} while ($x==$number);
 
   	}
@@ -76,8 +83,12 @@ function RandomStudent($class, $group, $number, $Type)
   	{
   		$g2_2ti = array(0,1,5,8,9,10,12,13,14,17,21,23,26,27,30,34,35);
       do {
-  		  $i = rand(0,count($g2_2ti));
-        $x = $g1_2ti;
+        if ($Type == "rand")
+  		  $i = rand(0,count($g2_2ti)-1);
+        else {
+          $i = mt_rand(0,count($g2_2ti)-1);
+        }
+        $x = $g2_2ti[$i];
   		} while ($x==$number);
   	}
 
@@ -85,7 +96,11 @@ function RandomStudent($class, $group, $number, $Type)
   	{
       do
       {
+        if ($Type == "rand")
   		$x = rand(1,15);
+      else {
+        $x = mt_rand(1,15);
+      }
   		}
       while($x==$number);
 
@@ -94,7 +109,11 @@ function RandomStudent($class, $group, $number, $Type)
   	{
       do
       {
+        if ($Type == "rand")
   		$x = rand(16,29);
+      else {
+        $x = mt_rand(16,29);
+      }
     }
     while($x==$number);
   	}
