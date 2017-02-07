@@ -11,7 +11,7 @@ if ($test == "tak") {
 }
 if ($zalogowany == "yes")
 {
-
+  dzialaj();
 }
 //nie zalogowany
 else if($zalogowany == "no")
@@ -59,7 +59,9 @@ function zapytajBaze()
   $baza = "korporacja";
   $connection = mysqli_connect($host, $user, $password, $baza);
   if ($connection) {
-    
+
   }
+  $log = "yes";
+  return $log;
 }
 ?>
