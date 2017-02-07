@@ -6,9 +6,9 @@
 
 #menu {width: 15%; float: left; min-height: 450px; background-color: lightblue;}
 
-#main {width: 70%; float: left; text-align: center; min-height: 400px; padding-top: 5px; background-color: #EEEEEE;}
+#main {width: 70%; float: left; text-align: center; min-height: 45%; padding-top: 5px; background-color: #EEEEEE;}
 
-#boczny {width: 15%; float: right; min-height: 450px; background-color: lightblue;}
+#boczny {width: 15%; float: right; min-height: 45%; background-color: lightblue;}
 
-#stopka {clear: both; width: 100%; height: 30px; text-align: center;}
+#stopka {clear: both; width: 100%; height: 30px; text-align: center; background-color: gray;}
 #slajd {width:500px; height:150px;}
