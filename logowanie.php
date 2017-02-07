@@ -22,7 +22,7 @@ else if($zalogowany == "no")
 else if($zalogowany == "error")
 {
 	infoError("Nieprawidłowy login lub hasło");
-	formularzLogowania;
+	formularzLogowania();
 }
 //strona nie istnieje
 else
@@ -57,11 +57,28 @@ function zapytajBaze()
   $user = "root";
   $password = "";
   $baza = "korporacja";
+  $zapytanie = "SELECT id, name, password FROM users";
   $connection = mysqli_connect($host, $user, $password, $baza);
   if ($connection) {
-
+    $wynik = $connection -> query($zapytanie);
+    if ($wynik) {
+      $ile = mysqli_num_rows($wynik);
+      if ($ile >= 0) {
+        $log = "error";
+        for($i=1; $i<= $ile; $i++)
+        {
+          $wiersz = mysqli_fetch_assoc($wynik);
+          $id = $wiersz["id"];
+          $name = $wiersz["name"];
+          $passwd = $wiersz["password"];
+          if ($login == $name && $haslo == $passwd)
+          {
+            $log = "yes";
+          }
+        }
+      }
+    }
   }
-  $log = "yes";
   return $log;
 }
 ?>
