@@ -8,7 +8,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$baza = "korporacja";
+$baza = "wahoo";
 $tabela = "users";
 $zapytanie = "CREATE TABLE $tabela (id INT NOT NULL PRIMARY KEY auto_increment, name TINYTEXT, password TINYTEXT)";
 $connection  = mysqli_connect($host, $user, $password, $baza);
