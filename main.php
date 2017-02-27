@@ -23,7 +23,7 @@ Przydatne walidatory: <a href="http://html5.validator.nu">http://html5.validator
 <a href="main.php?strona=random">Losowanie</a><br /><br />
 <a href="main.php?strona=users">Zapytanka</a><br /><br />
 <a href="main.php?strona=logowanie">logoj</a><br /><br />
-<a href="main.php?strona=rejestracja">zarejestrój</a><br /><br />
+<a href="main.php?strona=rejestracja">zarejestruj</a><br /><br />
 </nav>
 <section id="main">
 <?php
