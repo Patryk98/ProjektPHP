@@ -11,7 +11,7 @@
     }
     else
     {
-
+      echo "Nie zdąrzyłeś się zarejestrować. Spróbuj ponownie później";
     }
   }
   else
