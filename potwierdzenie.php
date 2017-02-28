@@ -5,7 +5,8 @@
   if ($serwer)
   {
     $wynik = $serwer -> query("UPDATE users SET status = 2 WHERE kod = '$kod';");
-    if($wynik == 1)
+    mysqli_close($serwer);
+    if($wynik)
     {
       echo "Aktywacja została pomyślnie zaktywowane";
     }

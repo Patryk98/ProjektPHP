@@ -20,7 +20,7 @@ if ($server)
   {
     $list = "Dziękuje za rejestrację w naszym serwisie. Aby potwierdzić rejestracje kliknij poniższy link
       http://localhost/ProjectPHP/main.php?strona=potwierdzenie
-    W przeciwnym wpadku zignoruj ten mail"
+    W przeciwnym wpadku zignoruj ten mail";
     mail($mail, "witamy w serwisie RAJ", $list);
     echo "Na pocztę został wysłany link aktywacyjny";
   }
