@@ -53,10 +53,7 @@ function zapytajBaze()
 {
   $login = $_REQUEST["login"];
   $haslo = md5($_REQUEST["haslo"]);
-  $host = "localhost";
-  $user = "root";
-  $password = "";
-  $baza = "wahoo";
+  require_once("connect_dane.php");
   $zapytanie = "SELECT id_uzytkownika, login, haslo FROM users";
   $connection = mysqli_connect($host, $user, $password, $baza);
   if ($connection) {

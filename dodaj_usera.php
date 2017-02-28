@@ -18,8 +18,13 @@ if ($server)
   $wynik = $server -> query("INSERT INTO users (imie, nazwisko, login, mail, haslo, kod, status) VALUES ('$imie', '$nazwisko', '$login', '$mail', '$haslo', '$kod', 1);");
   if ($wynik)
   {
-    echo "Użytkownik został dodany";
-  } else
+    $list = "Dziękuje za rejestrację w naszym serwisie. Aby potwierdzić rejestracje kliknij poniższy link
+      http://localhost/ProjectPHP/main.php?strona=potwierdzenie
+    W przeciwnym wpadku zignoruj ten mail"
+    mail($mail, "witamy w serwisie RAJ", $list);
+    echo "Na pocztę został wysłany link aktywacyjny";
+  }
+  else
   {
     echo "Użytkownik nie został wpisany do bazy";
   }
