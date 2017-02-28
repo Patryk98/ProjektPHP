@@ -52,12 +52,12 @@ END;
 function zapytajBaze()
 {
   $login = $_REQUEST["login"];
-  $haslo = $_REQUEST["haslo"];
+  $haslo = md5($_REQUEST["haslo"]);
   $host = "localhost";
   $user = "root";
   $password = "";
-  $baza = "korporacja";
-  $zapytanie = "SELECT id, name, password FROM users";
+  $baza = "wahoo";
+  $zapytanie = "SELECT id_uzytkownika, login, haslo FROM users";
   $connection = mysqli_connect($host, $user, $password, $baza);
   if ($connection) {
     $wynik = $connection -> query($zapytanie);
@@ -68,9 +68,9 @@ function zapytajBaze()
         for($i=1; $i<= $ile; $i++)
         {
           $wiersz = mysqli_fetch_assoc($wynik);
-          $id = $wiersz["id"];
-          $name = $wiersz["name"];
-          $passwd = $wiersz["password"];
+          $id = $wiersz["id_uzytkownika"];
+          $name = $wiersz["login"];
+          $passwd = $wiersz["haslo"];
           if ($login == $name && $haslo == $passwd)
           {
             $log = "yes";
